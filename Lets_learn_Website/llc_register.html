@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="llc.css" rel="stylesheet">
+</head>
+<script>
+
+  function matchPassword(){
+    var p1=document.getElementById('pswd1').value
+    var p2=document.getElementById('pswd2').value
+
+    if(p1.length < 8){
+        document.getElementById('message1').innerHTML='** password length must be atleast 8 characters'
+        return false
+    }
+
+    if(p1.length > 15){
+        document.getElementById('message1').innerHTML='** password length must not exceed 15 characters'
+        return false
+    }
+  
+    if(p1 != p2){
+        document.getElementById('message2').innerHTML="**Password did not matched"
+        return false
+    }
+    else{
+        alert("Password Created Sucessfully")
+    }
+}
+  
+</script>  
+<body>
+    <!---------------Header Section--------------->
+    <header>
+        <p class="c_header">Let's Learn Coding... </p>
+    </header>
+
+
+    <!---------------Navigation Section--------------->
+    <nav style="background-color: black; height: 35px; position:sticky; top:0;">
+        <a href="llc_register.html" class="c_nav" style=" float:right; margin-left: 2%; margin-right: 2%;">Register</a>
+        <a href="llc_login.html" class="c_nav" style=" float:right; margin-left: 2%; ">Login</a>
+        <a href="Lets_Learn_Coding.html" class="c_nav" style="margin-right: 2%; margin-left: 2%;">Home</a>
+        <a href="llc_about.html" class="c_nav">About</a>
+    </nav>
+
+
+    <!-----------------Div Design-------------------->
+    <div class="div_reg">
+        <label style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: red; margin-top: 8px;"><h1 align="center" style="margin-top: 8px;">Register Yourself</h1></label>
+        <hr style="color:gray; margin-top: 10px;">
+    <form method="POST" action="llc_login.html" onsubmit="return matchPassword()">
+        <table style="border: none; margin-top: 0%;">
+        <tr>
+         <td><label class="label_reg">First Name</label></td>
+         <td><input type="text" class="input_reg" required></td>
+        </tr>
+        <tr>
+         <td><label class="label_reg">Last Name</label></td>
+         <td><input type="text" class="input_reg" required></td>
+        </tr>
+        <tr>
+         <td><label class="label_reg">Gender</label></td>
+         <td>
+          <input type="radio" name="Gender" class="input_reg"><label class="label_reg" style="font-size: 1.2rem; margin-left: 0%;">Male</label>
+          <input type="radio" name="Gender" class="input_reg"><label class="label_reg" style="font-size: 1.2rem; margin-left: 0%;">Female</label>
+         </td>
+        </tr>
+        <tr>
+         <td><label class="label_reg">Email</label></td>
+         <td><input type="email" class="input_reg" required></td>
+        </tr>
+        <tr>
+         <td><label class="label_reg">Phone no.</label></td>
+         <td>
+          <select class="input_reg" style="font-size: 1.5rem;" required>
+           <option>91</option>
+           <option>92</option>
+           <option>97</option>
+           <option>66</option>
+           <option>51</option>
+           <option>98</option>
+          </select>
+          <input type="text" class="input_reg" style="width: 12rem;">
+         </td>
+        </tr>
+        <tr>
+            <td><label class="label_reg">Username</label></td>
+            <td><input type="text" class="input_reg" required></td>
+        </tr>
+        <tr>
+            <td><label class="label_reg">Password</label></td>
+            <td><input type="password" class="input_reg" id="pswd1" required></td>
+            
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: center;"><span id="message1" style="color: red; text-align: center;"></span></td>
+        </tr>
+        <tr>
+            <td><label class="label_reg" style="font-size: 1.2rem;">Confirm Password</label></td>
+            <td><input type="password" class="input_reg" id="pswd2" required></td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="text-align: center;"><span id="message2" style="color: red; text-align: center;"></span></td>
+        </tr>
+        <tr>
+         <td colspan="3" align="center"><input type="submit" class="button1" value="REGISTER" background-color="green" style="margin-top: 2.5rem;"></td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center"><input type="reset" class="button2" value="CLEAR" style="margin-top: 1.5rem;"></td>
+        </tr>
+       </table>
+    </form>
+    </div>
+    <footer>
+        <div style="background-color: black; display:inline-block;">
+            <p style="color: antiquewhite;">
+                Let's Learn Coding is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy.
+                Copyright  by Rigveda. All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+
+</body>
+</html>
